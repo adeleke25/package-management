@@ -17,6 +17,9 @@ sudo apt-get install jenkins
 sudo usermod -aG docker jenkins  ( This is to enable jenkins user to execute docker commands)
 sudo systemctl restart docker.service (To restart docker.service)
 sudo echo "jenkins ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/jenkins
+
+# Check jenkins shell to see if it bin/bash. if it shows false, change it to bash.
+sudo vi /etc/passwd
 sudo systemctl daemon-reload  # To Register the Jenkins service 
 sudo systemctl start jenkins
 systemctl status jenkins
